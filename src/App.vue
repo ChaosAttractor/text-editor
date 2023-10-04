@@ -16,6 +16,11 @@ import EditorBlock from './components/EditorBlock.vue';
  */
 const action = (e: any) => {
   let val = '.header1';
+  if (e === 'copy') {
+    val = document.getElementById('edit')?.outerHTML;
+    navigator.clipboard.writeText(val);
+    return;
+  }
   if (e === 'insertImage') {
     val = prompt('img link') || '';
   }

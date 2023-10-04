@@ -3,6 +3,7 @@
     <HeaderButton v-for="btn in btns" :key="btn.name" @click="() => emit('click', btn.action)">
       <component :is="btn.name" />
     </HeaderButton>
+    <span @click="emit('click', 'copy')" class="header__copy"> copy HTML </span>
   </section>
 </template>
 
@@ -49,9 +50,16 @@ const btns = ref<Btns[]>([
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/colors';
 .header {
   height: 38px;
   display: flex;
   gap: 12px;
+  &__copy {
+    display: flex;
+    align-items: center;
+    color: $blue;
+    cursor: pointer;
+  }
 }
 </style>

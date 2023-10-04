@@ -1,5 +1,5 @@
 <template>
-  <div contenteditable class="editor-block" />
+  <section contenteditable class="editor-block" id="edit" />
 </template>
 
 <style lang="scss" scoped>
